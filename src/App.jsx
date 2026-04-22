@@ -5,6 +5,8 @@ import Course from './component/Course';
 import Projects from './component/Projects';
 import Module from './component/Module';
 import Companies from './component/Companies';
+import Plans from './component/Plans';
+import Footer from './component/Footer';
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Projects/>
         <Module/>
         <Companies/>
+        <Plans/>
+        <Footer/>
       </main>
     </div>
   );
