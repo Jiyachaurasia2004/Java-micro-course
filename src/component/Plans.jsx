@@ -16,7 +16,8 @@ function Plans() {
   const [showQR, setShowQR] = useState(false);
   const [copied, setCopied] = useState(null);
 const [showForm, setShowForm] = useState(false);
-
+  const [showInstallment, setShowInstallment] = useState(false);
+    const [selectedMonth, setSelectedMonth] = useState(1);
   // ✅ COPY FUNCTION (toast effect added)
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
@@ -87,7 +88,7 @@ const [showForm, setShowForm] = useState(false);
     <div>
 
       {/* HEADING */}
-      <section className="py-16 bg-gradient-to-r from-blue-950 to-indigo-900 text-center">
+      <section className="py-16 bg-gradient-to-r from-blue-950 to-indigo-900 text-center" id="plans">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white">
           Choose Your{" "}
           <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
@@ -251,7 +252,73 @@ const [showForm, setShowForm] = useState(false);
     Scan QR Code to Pay
   </h2>
 </div>
+      {/* 🔥 INSTALLMENT MODAL */}
+      {showInstallment && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
 
+          <div className="bg-indigo-900 text-white p-6 rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto relative">
+
+            <button
+              onClick={() => setShowInstallment(false)}
+              className="absolute top-3 right-3"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-xl font-bold text-center mb-4">
+              Installment Plans
+            </h2>
+
+            {/* LIST */}
+            {[1,2,3,4,5].map((i) => (
+              <div key={i} className="flex justify-between bg-white/10 p-3 rounded mb-2">
+                <span>{i} Month</span>
+                <span>₹4,012</span>
+              </div>
+            ))}
+
+            {/* SELECT */}
+            <div className="flex gap-2 mt-4 flex-wrap">
+              {[1,2,3,4,5].map((num) => (
+                <button
+                  key={num}
+                  onClick={() => setSelectedMonth(num)}
+                  className={`px-4 py-2 rounded ${
+                    selectedMonth === num ? "bg-green-500" : "bg-white/10"
+                  }`}
+                >
+                  {num}
+                </button>
+              ))}
+            </div>
+
+            <p className="text-center mt-3">
+              Selected Month: {selectedMonth}
+            </p>
+
+            {/* BUTTONS */}
+            <div className="flex gap-3 mt-5">
+              <button
+                onClick={() => setShowInstallment(false)}
+                className="flex-1 py-2 bg-gray-600 rounded"
+              >
+                Cancel
+              </button>
+
+              <button
+                onClick={() => {
+                  setShowInstallment(false);
+                  setShowQR(true);
+                }}
+                className="flex-1 py-2 bg-green-500 rounded"
+              >
+                Pay Month {selectedMonth}
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
 {/* QR IMAGE */}
 <div className="bg-white p-4 rounded-xl flex justify-center">
   <img

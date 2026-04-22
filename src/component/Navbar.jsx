@@ -81,8 +81,8 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <a
-            href="#contact"
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold shadow hover:shadow-md hover:scale-105 transition inline-block text-center"
+            href="#plans"
+            className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-lg font-semibold shadow hover:shadow-md hover:scale-105 transition inline-block text-center"
           >
            Enroll Now
           </a>
@@ -119,11 +119,11 @@ const Navbar = () => {
           ))}
 
           <a
-            href="#contact"
+            href="#plans"
             onClick={() => setIsMenuOpen(false)}
-            className="bg-sky-600 text-white py-2 rounded-lg font-semibold text-center"
+            className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-2 rounded-lg font-semibold text-center"
           >
-            Register Now
+            Enroll Now
           </a>
         </div>
       </div>

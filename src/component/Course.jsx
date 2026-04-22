@@ -9,21 +9,64 @@ const courses = [
     title: "Core Java",
     desc: "Learn Java fundamentals including OOP concepts, loops, and collections.",
     img: "https://cdn-icons-png.flaticon.com/512/226/226777.png",
+    topics: [
+      "Basics of Java language (syntax, variables, data types)",
+      "OOP concepts → Encapsulation, Inheritance, Polymorphism, Abstraction",
+      "Classes & Objects",
+      "Exception Handling (try-catch, finally, throw)",
+      "Collections Framework (List, Set, Map)",
+      "Multithreading & Synchronization",
+      "String handling (String, StringBuilder, StringBuffer)",
+      "JVM, JRE, JDK concept"
+    ]
   },
   {
     title: "Core Java + JDBC + MySQL",
     desc: "Java with database connectivity and MySQL integration.",
     img: "https://cdn-icons-png.flaticon.com/512/919/919836.png",
+     topics: [
+      "JDBC = Java Database Connectivity",
+      "Load Driver",
+      "Create Connection",
+      "Create Statement",
+      "Execute Query",
+      "Close Connection",
+      "CRUD operations (Create, Read, Update, Delete)",
+      "PreparedStatement (SQL injection safe)",
+      "ResultSet for data fetching",
+      "MySQL database integration",
+      "Connection pooling basics"
+    ]
   },
   {
     title: "Core Java + Advanced Java",
     desc: "Servlets, JSP, and backend integration.",
     img: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+      topics: [
+      "Servlet (server-side processing)",
+      "JSP (Java Server Pages)",
+      "Session Management (Cookies, HttpSession)",
+      "Filters & Listeners",
+      "MVC architecture",
+      "Web application structure (WAR file)",
+      "Deployment on server (Tomcat)"
+    ]
   },
   {
     title: "Spring Boot + Hibernate",
     desc: "Modern backend development using Java frameworks.",
     img: "https://cdn-icons-png.flaticon.com/512/919/919851.png",
+     topics: [
+      "Spring Boot = rapid backend development framework",
+      "Hibernate = ORM (Object Relational Mapping)",
+      "Annotations-based configuration",
+      "REST APIs creation",
+      "Dependency Injection (IoC)",
+      "Spring Data JPA (no need to write SQL manually)",
+      "Entity mapping with database",
+      "Application properties configuration",
+      "CRUD APIs with Controller, Service, Repository layers"
+    ]
   },
 ];
 
@@ -36,8 +79,10 @@ function Course() {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-100 text-center"    id="course">
-
+    <section
+      className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-100 text-center"
+      id="course"
+    >
       {/* Badge */}
       <div className="mb-6">
         <span className="px-6 py-2 rounded-full text-white text-sm font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 shadow-md">
@@ -55,7 +100,8 @@ function Course() {
 
       {/* Subtitle */}
       <p className="mt-6 text-gray-600 text-lg max-w-3xl mx-auto">
-        Learn Java from basics to advanced with real-world projects and industry-level backend skills
+        Learn Java from basics to advanced with real-world projects and
+        industry-level backend skills
       </p>
 
       {/* Button */}
@@ -101,11 +147,12 @@ function Course() {
 
             {/* Image */}
             <div className="relative z-10 flex justify-center mb-5">
-              <div className="w-20 h-20 flex items-center justify-center rounded-2xl 
+              <div
+                className="w-20 h-20 flex items-center justify-center rounded-2xl 
                 bg-gradient-to-br from-blue-50 to-cyan-50 
                 border border-blue-100 
-                shadow-sm group-hover:shadow-md transition-all duration-300">
-
+                shadow-sm group-hover:shadow-md transition-all duration-300"
+              >
                 <motion.img
                   src={course.img}
                   alt="course"
@@ -139,15 +186,12 @@ function Course() {
               </button>
 
               {/* Enroll */}
-              <button
-                onClick={() => {
-                  setSelectedCourse(course);
-                  setShowForm(true);
-                }}
+              <a
+                href="#plans"
                 className="px-4 py-2 text-sm rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md hover:scale-105 transition"
               >
                 Enroll
-              </button>
+              </a>
             </div>
 
             {/* Bottom Line */}
@@ -158,24 +202,36 @@ function Course() {
 
       {/* ================= DETAILS MODAL ================= */}
       {showDetails && selectedCourse && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-6 max-w-md w-full shadow-lg">
-            <h2 className="text-xl font-bold mb-2">
-              {selectedCourse.title}
-            </h2>
-            <p className="text-gray-600 text-sm">
-              {selectedCourse.desc}
-            </p>
+  <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
 
-            <button
-              onClick={() => setShowDetails(false)}
-              className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+    <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md md:max-w-lg shadow-lg max-h-[85vh] overflow-y-auto">
+
+      {/* Heading (center) */}
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
+        {selectedCourse.title}
+      </h2>
+
+      {/* 🔥 Topics List (left aligned) */}
+      <ul className="text-gray-700 text-sm sm:text-base space-y-2 list-disc pl-5 text-left">
+        {selectedCourse.topics.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+
+      {/* Button */}
+      <div className="flex justify-center">
+        <button
+          onClick={() => setShowDetails(false)}
+          className="mt-5 px-5 py-2 bg-red-500 text-white rounded-lg hover:scale-105 transition"
+        >
+          Close
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+)}
 
       {/* ================= ENROLL FORM ================= */}
       {showForm && selectedCourse && (
