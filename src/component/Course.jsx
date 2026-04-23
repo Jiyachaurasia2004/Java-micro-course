@@ -201,32 +201,30 @@ function Course() {
       </motion.div>
 
       {/* ================= DETAILS MODAL ================= */}
-      {showDetails && selectedCourse && (
+     {showDetails && selectedCourse && (
   <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
 
-    <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md md:max-w-lg shadow-lg max-h-[85vh] overflow-y-auto">
+    <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md md:max-w-lg shadow-lg max-h-[85vh] overflow-y-auto relative">
 
-      {/* Heading (center) */}
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
+      {/* ❌ CROSS BUTTON */}
+      <button
+        onClick={() => setShowDetails(false)}
+        className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
+      >
+        ✕
+      </button>
+
+      {/* Heading */}
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
         {selectedCourse.title}
       </h2>
 
-      {/* 🔥 Topics List (left aligned) */}
+      {/* Topics */}
       <ul className="text-gray-700 text-sm sm:text-base space-y-2 list-disc pl-5 text-left">
         {selectedCourse.topics.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
-
-      {/* Button */}
-      <div className="flex justify-center">
-        <button
-          onClick={() => setShowDetails(false)}
-          className="mt-5 px-5 py-2 bg-red-500 text-white rounded-lg hover:scale-105 transition"
-        >
-          Close
-        </button>
-      </div>
 
     </div>
 
