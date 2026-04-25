@@ -26,53 +26,53 @@ function Plans() {
       setCopied(null);
     }, 1500);
   };
-  const plans = [
-    {
-      title: "Registration Only",
-      price: "₹2,000",
-      total: "₹2,360",
-      icon: <FaShieldAlt />,
-      btn: "Register Now",
-      color: "from-pink-500 to-purple-500",
-      features: [
-        "Course Registration",
-        "Learning Material Access",
-        "Community Access",
-        "Basic Resources",
-        "30 Days Access",
-      ],
-    },
-    {
-      title: "Installment Plan",
-      price: "₹17,000",
-      old: "₹35,000",
-      total: "₹20,060",
-      icon: <FaCreditCard />,
-      btn: "View Installment Plans",
-      highlight: true,
-      features: [
-        "Complete Course Access",
-        "All Projects & Assignments",
-        "Live Interactive Sessions",
-        "Industry Certificate",
-        "No-Cost EMI Available",
-      ],
-    },
-    {
-      title: "One-Time Payment",
-      price: "₹15,000",
-      total: "₹17,700",
-      icon: <FaMoneyBill />,
-      btn: "Buy Now",
-      features: [
-        "Complete Course Access",
-        "All Projects & Assignments",
-        "Live Sessions",
-        "Certificate",
-        "Lifetime Updates",
-      ],
-    },
-  ];
+  // const plans = [
+  //   {
+  //     title: "Registration Only",
+  //     price: "₹2,000",
+  //     total: "₹2,360",
+  //     icon: <FaShieldAlt />,
+  //     btn: "Register Now",
+  //     color: "from-pink-500 to-purple-500",
+  //     features: [
+  //       "Course Registration",
+  //       "Learning Material Access",
+  //       "Community Access",
+  //       "Basic Resources",
+  //       "30 Days Access",
+  //     ],
+  //   },
+  //   {
+  //     title: "Installment Plan",
+  //     price: "₹17,000",
+  //     old: "₹35,000",
+  //     total: "₹20,060",
+  //     icon: <FaCreditCard />,
+  //     btn: "View Installment Plans",
+  //     highlight: true,
+  //     features: [
+  //       "Complete Course Access",
+  //       "All Projects & Assignments",
+  //       "Live Interactive Sessions",
+  //       "Industry Certificate",
+  //       "No-Cost EMI Available",
+  //     ],
+  //   },
+  //   {
+  //     title: "One-Time Payment",
+  //     price: "₹15,000",
+  //     total: "₹17,700",
+  //     icon: <FaMoneyBill />,
+  //     btn: "Buy Now",
+  //     features: [
+  //       "Complete Course Access",
+  //       "All Projects & Assignments",
+  //       "Live Sessions",
+  //       "Certificate",
+  //       "Lifetime Updates",
+  //     ],
+  //   },
+  // ];
 
   const bankData = [
     { label: "Account Holder", value: "BEANGATE IT SOLUTIONS PVT. LTD." },
@@ -85,24 +85,8 @@ function Plans() {
 
   return (
     <div>
-      {/* HEADING */}
-      <section
-        className="py-16 bg-gradient-to-r from-blue-950 to-indigo-900 text-center"
-        id="plans"
-      >
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white">
-          Choose Your{" "}
-          <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-            Investment Plan
-          </span>
-        </h1>
-        <p className="mt-4 text-gray-300">
-          18% GST applicable on all plans as per government regulations
-        </p>
-      </section>
-
       {/* PRICING */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-950 to-indigo-900 text-white">
+      {/* <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-950 to-indigo-900 text-white">
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
           {plans.map((plan, i) => (
             <motion.div
@@ -162,6 +146,23 @@ function Plans() {
             </motion.div>
           ))}
         </div>
+      </section> */}
+      {/* HEADING */}
+      <section
+        className="py-16 bg-gradient-to-r from-blue-950 to-indigo-900 text-center"
+        id="plans"
+      >
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white">
+          Complete Your{" "}
+          <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
+            Payment Process
+          </span>
+        </h1>
+
+        <p className="mt-4 text-gray-300">
+          Choose your preferred payment method and submit your details after
+          completing the payment
+        </p>
       </section>
 
       {/* BANK DETAILS */}
@@ -174,10 +175,15 @@ function Plans() {
             </div>
 
             <button
-              onClick={() => {
-                setSelectedPlan(selectedPlan || plans[0]);
-                setShowQR(true);
-              }}
+             onClick={() => {
+  if (!selectedPlan) {
+    setSelectedPlan({
+      title: "Custom Payment",
+      total: "As per plan",
+    });
+  }
+  setShowQR(true);
+}}
               className="px-6 py-3 text-white font-bold rounded-full bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 transition active:scale-95"
             >
               Scan QR Code to Pay
@@ -216,191 +222,198 @@ function Plans() {
 
           {/* BUTTON */}
           <button
-            onClick={() => {
-              setShowForm(true);
-            }}
+           onClick={() => {
+  if (!selectedPlan) {
+    setSelectedPlan({
+      title: "Custom Payment",
+      total: "Manual Entry",
+    });
+  }
+  setShowForm(true);
+}}
             className="mt-8 px-6 py-3 bg-green-600 rounded-xl text-white font-semibold hover:bg-green-700 transition"
           >
             Already Made Payment? Submit Details
           </button>
         </div>
       </section>
-     {/* 🔥 QR MODAL */}
-{showQR && selectedPlan && (
-  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-3">
-    <motion.div
-      initial={{ scale: 0.7, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      className="bg-gradient-to-br from-[#0b0233] to-[#0f2a44] p-4 sm:p-6 rounded-2xl w-full max-w-md text-white relative"
-    >
-      {/* Close */}
-      <button
-        onClick={() => setShowQR(false)}
-        className="absolute top-3 right-3 text-white text-xl"
-      >
-        ✕
-      </button>
-
-      {/* QR ICON + TITLE */}
-      <div className="flex flex-col items-center text-center mb-4">
-        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 flex items-center justify-center mb-2">
-          <FaQrcode className="text-xl sm:text-2xl text-white" />
-        </div>
-
-        <h2 className="font-bold text-base sm:text-lg">
-          Scan QR Code to Pay
-        </h2>
-      </div>
-
-      {/* QR IMAGE */}
-      <div className="bg-white w-full max-w-[220px] sm:max-w-[250px] mx-auto rounded-xl flex justify-center">
-        <img
-          src={qr}
-          alt="qr"
-          className="w-40 h-40 sm:w-48 sm:h-48 object-contain"
-        />
-      </div>
-
-      {/* DETAILS */}
-      <div className="mt-5 bg-white/10 p-3 sm:p-4 rounded-xl text-xs sm:text-sm">
-        <p className="flex justify-between">
-          <span>Plan:</span>
-          <span className="font-semibold">{selectedPlan.title}</span>
-        </p>
-
-        <p className="flex justify-between mt-2">
-          <span>Amount:</span>
-          <span className="text-green-400 font-bold">
-            {selectedPlan.total}
-          </span>
-        </p>
-      </div>
-
-      {/* BUTTONS */}
-      <div className="flex flex-col sm:flex-row gap-3 mt-5">
-        <button
-          onClick={() => setShowQR(false)}
-          className="w-full py-2 rounded-lg bg-gray-600 hover:bg-gray-700 transition"
-        >
-          Close
-        </button>
-
-        <button
-          onClick={() => {
-            setShowQR(false);
-            setShowForm(true);
-          }}
-          className="w-full py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 transition"
-        >
-          I've Paid
-        </button>
-      </div>
-    </motion.div>
-  </div>
-)}
-              {/* 🔥 INSTALLMENT MODAL */}
-           {showInstallment && (
-  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
-    <div className="bg-gradient-to-br from-[#0b0233] to-[#0f2a44] text-white p-6 rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
-
-      {/* CLOSE */}
-      <button
-        onClick={() => setShowInstallment(false)}
-        className="absolute top-4 right-4 text-white/70 hover:text-white text-xl"
-      >
-        ✕
-      </button>
-
-      {/* HEADER */}
-      <div className="text-center mb-6">
-        <div className="w-14 h-14 mx-auto rounded-full bg-green-500/20 flex items-center justify-center mb-3">
-          <FaCreditCard className="text-green-400 text-2xl" />
-        </div>
-
-        <h2 className="text-2xl font-bold">Installment Plans</h2>
-        <p className="text-gray-400 text-sm mt-1">
-          Flexible payment options for your convenience
-        </p>
-      </div>
-
-      {/* SCHEDULE */}
-      <div className="bg-white/5 rounded-2xl p-4 mb-5">
-        <h3 className="font-semibold mb-3 text-lg">
-          5-Month Installment Schedule:
-        </h3>
-
-        {[1, 2, 3, 4, 5].map((i) => (
-          <div
-            key={i}
-            className="flex justify-between items-center bg-white/5 px-4 py-3 rounded-lg mb-2"
+      {/* 🔥 QR MODAL */}
+      {showQR && selectedPlan && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-3">
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-gradient-to-br from-[#0b0233] to-[#0f2a44] p-4 sm:p-6 rounded-2xl w-full max-w-md text-white relative"
           >
-            <span className="text-gray-300">
-              {i} {i === 1 ? "st" : i === 2 ? "nd" : i === 3 ? "rd" : "th"} Installment:
-            </span>
-            <span className="font-semibold">₹4,012</span>
-          </div>
-        ))}
-      </div>
-
-      {/* SELECT */}
-      <div className="mb-4">
-        <p className="text-sm mb-3 text-gray-300">
-          Select Installment to Pay:
-        </p>
-
-        <div className="flex gap-3 flex-wrap justify-center">
-          {[1, 2, 3, 4, 5].map((num) => (
+            {/* Close */}
             <button
-              key={num}
-              onClick={() => setSelectedMonth(num)}
-              className={`w-20 py-3 rounded-xl text-center transition-all ${
-                selectedMonth === num
-                  ? "bg-green-500 text-white shadow-lg scale-105"
-                  : "bg-white/10 hover:bg-white/20"
-              }`}
+              onClick={() => setShowQR(false)}
+              className="absolute top-3 right-3 text-white text-xl"
             >
-              <div className="font-bold">{num}</div>
-              <div className="text-xs text-gray-300">₹4,012</div>
+              ✕
             </button>
-          ))}
+
+            {/* QR ICON + TITLE */}
+            <div className="flex flex-col items-center text-center mb-4">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 flex items-center justify-center mb-2">
+                <FaQrcode className="text-xl sm:text-2xl text-white" />
+              </div>
+
+              <h2 className="font-bold text-base sm:text-lg">
+                Scan QR Code to Pay
+              </h2>
+            </div>
+
+            {/* QR IMAGE */}
+            <div className="bg-white w-full max-w-[220px] sm:max-w-[250px] mx-auto rounded-xl flex justify-center">
+              <img
+                src={qr}
+                alt="qr"
+                className="w-40 h-40 sm:w-48 sm:h-48 object-contain"
+              />
+            </div>
+
+            {/* DETAILS */}
+            <div className="mt-5 bg-white/10 p-3 sm:p-4 rounded-xl text-xs sm:text-sm">
+              <p className="flex justify-between">
+                <span>Plan:</span>
+                <span className="font-semibold">{selectedPlan.title}</span>
+              </p>
+
+              <p className="flex justify-between mt-2">
+                <span>Amount:</span>
+                <span className="text-green-400 font-bold">
+                  {selectedPlan.total}
+                </span>
+              </p>
+            </div>
+
+            {/* BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-3 mt-5">
+              <button
+                onClick={() => setShowQR(false)}
+                className="w-full py-2 rounded-lg bg-gray-600 hover:bg-gray-700 transition"
+              >
+                Close
+              </button>
+
+              <button
+                onClick={() => {
+                  setShowQR(false);
+                  setShowForm(true);
+                }}
+                className="w-full py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 transition"
+              >
+                I've Paid
+              </button>
+            </div>
+          </motion.div>
         </div>
+      )}
+      {/* 🔥 INSTALLMENT MODAL */}
+      {showInstallment && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
+          <div className="bg-gradient-to-br from-[#0b0233] to-[#0f2a44] text-white p-6 rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            {/* CLOSE */}
+            <button
+              onClick={() => setShowInstallment(false)}
+              className="absolute top-4 right-4 text-white/70 hover:text-white text-xl"
+            >
+              ✕
+            </button>
 
-        <p className="text-center mt-3 text-gray-400 text-sm">
-          Selected: Month {selectedMonth} - ₹4,012
-        </p>
-      </div>
+            {/* HEADER */}
+            <div className="text-center mb-6">
+              <div className="w-14 h-14 mx-auto rounded-full bg-green-500/20 flex items-center justify-center mb-3">
+                <FaCreditCard className="text-green-400 text-2xl" />
+              </div>
 
-      {/* BUTTONS */}
-      <div className="flex gap-3 mt-6">
-        <button
-          onClick={() => setShowInstallment(false)}
-          className="flex-1 py-3 bg-gray-600 hover:bg-gray-700 rounded-xl transition"
-        >
-          Cancel
-        </button>
+              <h2 className="text-2xl font-bold">Installment Plans</h2>
+              <p className="text-gray-400 text-sm mt-1">
+                Flexible payment options for your convenience
+              </p>
+            </div>
 
-        <button
-          onClick={() => {
-            setShowInstallment(false);
+            {/* SCHEDULE */}
+            <div className="bg-white/5 rounded-2xl p-4 mb-5">
+              <h3 className="font-semibold mb-3 text-lg">
+                5-Month Installment Schedule:
+              </h3>
 
-            // ✅ Dynamic amount set
-            const amount = 4012;
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div
+                  key={i}
+                  className="flex justify-between items-center bg-white/5 px-4 py-3 rounded-lg mb-2"
+                >
+                  <span className="text-gray-300">
+                    {i}{" "}
+                    {i === 1 ? "st" : i === 2 ? "nd" : i === 3 ? "rd" : "th"}{" "}
+                    Installment:
+                  </span>
+                  <span className="font-semibold">₹4,012</span>
+                </div>
+              ))}
+            </div>
 
-            setSelectedPlan({
-              ...selectedPlan,
-              total: `₹${amount}`,
-            });
+            {/* SELECT */}
+            <div className="mb-4">
+              <p className="text-sm mb-3 text-gray-300">
+                Select Installment to Pay:
+              </p>
 
-            setShowQR(true);
-          }}
-          className="flex-1 py-3 bg-green-500 hover:bg-green-600 rounded-xl font-semibold transition"
-        >
-          Pay Month {selectedMonth}
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+              <div className="flex gap-3 flex-wrap justify-center">
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <button
+                    key={num}
+                    onClick={() => setSelectedMonth(num)}
+                    className={`w-20 py-3 rounded-xl text-center transition-all ${
+                      selectedMonth === num
+                        ? "bg-green-500 text-white shadow-lg scale-105"
+                        : "bg-white/10 hover:bg-white/20"
+                    }`}
+                  >
+                    <div className="font-bold">{num}</div>
+                    <div className="text-xs text-gray-300">₹4,012</div>
+                  </button>
+                ))}
+              </div>
+
+              <p className="text-center mt-3 text-gray-400 text-sm">
+                Selected: Month {selectedMonth} - ₹4,012
+              </p>
+            </div>
+
+            {/* BUTTONS */}
+            <div className="flex gap-3 mt-6">
+              <button
+                onClick={() => setShowInstallment(false)}
+                className="flex-1 py-3 bg-gray-600 hover:bg-gray-700 rounded-xl transition"
+              >
+                Cancel
+              </button>
+
+              <button
+                onClick={() => {
+                  setShowInstallment(false);
+
+                  // ✅ Dynamic amount set
+                  const amount = 4012;
+
+                  setSelectedPlan({
+                    ...selectedPlan,
+                    total: `₹${amount}`,
+                  });
+
+                  setShowQR(true);
+                }}
+                className="flex-1 py-3 bg-green-500 hover:bg-green-600 rounded-xl font-semibold transition"
+              >
+                Pay Month {selectedMonth}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       {showForm && selectedPlan && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
           <motion.div
