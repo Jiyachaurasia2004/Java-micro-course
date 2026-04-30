@@ -21,10 +21,10 @@ const Hero = () => {
 
       {/* Heading */}
       <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-       Java 
+      Data Science 
 {" "}
         <span className="bg-gradient-to-r from-yellow-400 to-blue-600 bg-clip-text text-transparent">
-        Full Stack 
+       & Data Analysis
         </span>
       </h1>
       <h2 className="text-3xl md:text-5xl font-bold text-blue-600 mt-3">

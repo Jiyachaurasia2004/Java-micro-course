@@ -165,10 +165,10 @@ function Projects() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
       {[
-        "Build responsive frontend applications",
-        "Create scalable Java backend services",
-        "Design efficient database schemas",
-        "Deploy full-stack applications",
+       "Work with real-world data for analysis",
+"Build machine learning models",
+"Perform data cleaning and preprocessing",
+"Create dashboards and visualizations",
       ].map((item, index) => (
         <motion.div
           key={index}

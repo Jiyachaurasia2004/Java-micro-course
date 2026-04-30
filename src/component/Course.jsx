@@ -8,93 +8,179 @@ import { FaMoneyBill } from "react-icons/fa";
 import qr from "../assets/qr-beangate.png";
 import { FaShieldAlt } from "react-icons/fa";
 const courses = [
-  {
-    title: "Core Java",
-    desc: "Learn Java fundamentals including OOP concepts, loops, and collections.",
-    img: java,
-    topics: [
-      "Basics of Java (syntax, variables, data types)",
-      "Operators & Control Statements (if-else, switch, loops)",
-      "OOP concepts → Encapsulation, Inheritance, Polymorphism, Abstraction",
-      "Classes & Objects",
-      "Constructors & Method Overloading",
-      "Exception Handling (try-catch, finally, throw, throws)",
-      "Collections Framework (List, Set, Map)",
-      "Multithreading & Synchronization",
-      "String handling (String, StringBuilder, StringBuffer)",
-      "File Handling (FileReader, FileWriter)",
-      "Wrapper Classes & Autoboxing",
-      "JVM, JRE, JDK architecture",
-      "Garbage Collection",
-      "Java Memory Management (Heap, Stack)",
-    ],
-  },
+ {
+  title: "Core Python (Programming + Data Analysis Basics)",
+  desc: "Learn Python fundamentals for programming, data analysis, and building a strong foundation for Data Science and Machine Learning.",
+  img: java,
+  topics: [
+    // Setup & Basics
+    "Anaconda Installation & Jupyter Notebook Basics",
+    "Python Introduction & Syntax (Indentation, Identifiers)",
+    "Operators & Operator Precedence",
+    "User Input, Comments & Multi-line Statements",
+
+    // Core Programming
+    "Numbers, Booleans & Strings (Formatting & Operations)",
+    "Conditional Statements (if, if-else, if-elif)",
+    "Loops (for, while, break, continue)",
+
+    // Data Structures
+    "Lists, Tuples, Dictionaries",
+    "Indexing, Slicing & Basic Operations",
+    "Built-in Functions & Methods",
+
+    // Functions & Modules
+    "Defining & Calling Functions",
+    "Arguments & Return Values",
+    "Lambda Functions (Anonymous)",
+    "Iterators & Generators",
+
+    // File Handling & Exceptions
+    "File Operations (open, read, write, seek, close)",
+    "Exception Handling (try, except, finally)",
+    "User-defined Exceptions",
+
+    // Regular Expressions
+    "Pattern Matching (Search & Replace)"
+  ],
+},
+
+ {
+  title: "Advance Python + MySQL (Data Analysis & Database Integration)",
+  desc: "Learn advanced Python with MySQL integration, data analysis using Pandas & NumPy, and data visualization for real-world Data Science applications.",
+  img: java,
+  topics: [
+    // Python + MySQL
+    "Python-MySQL Connection (mysql-connector)",
+    "Database CRUD Operations (Create, Read, Update, Delete)",
+    "Executing Queries & Fetching Data",
+    "Joins (Inner, Left, Right)",
+    "Transactions (commit, rollback)",
+    "Indexes & Query Optimization Basics",
+
+    // NumPy
+    "NumPy Introduction & Array Creation",
+    "Indexing, Slicing & Iteration",
+    "Shape Manipulation (reshape, stack, split)",
+    "Broadcasting & Statistical Operations",
+
+    // Pandas (Data Analysis)
+    "Pandas Introduction & Data Import",
+    "DataFrames, Indexing & Filtering",
+    "Data Cleaning & Transformation",
+    "Column Operations & Aggregations",
+
+    // Data Visualization
+    "Matplotlib (plot, subplot, histogram)",
+    "Seaborn (statistical & categorical plots)",
+    "Plotly Basics (interactive charts)",
+    "Folium (map-based visualization)",
+
+    // Practice & Case Studies
+    "300+ Coding Exercises (Basics → Advanced)",
+    "Case Studies on NumPy, Pandas & Visualization",
+    "Assessment Test (Coding + MCQ)"
+  ],
+},
 
   {
-    title: "Core Java + JDBC + MySQL",
-    desc: "Java with database connectivity and MySQL integration.",
-    img: java,
-    topics: [
-      "JDBC Architecture",
-      "Load Driver & Establish Connection",
-      "Statement vs PreparedStatement vs CallableStatement",
-      "Execute Query & Update",
-      "CRUD operations (Create, Read, Update, Delete)",
-      "PreparedStatement (SQL injection prevention)",
-      "ResultSet for data fetching",
-      "Batch Processing in JDBC",
-      "Transaction Management (commit, rollback)",
-      "MySQL database integration",
-      "Joins (Inner, Left, Right)",
-      "Indexes & Performance basics",
-      "Connection Pooling",
-      "DAO Design Pattern",
-    ],
-  },
+  title: "Power BI (Data Visualization & Business Intelligence)",
+  desc: "Learn Power BI for data analysis, dashboard creation, and business intelligence to turn raw data into meaningful insights.",
+  img: java,
+  topics: [
+    // Basics & Setup
+    "Power BI Desktop Installation & Data Connection",
+    "Workflow in Power BI & Data Views",
+    "Query Editor & Data Modeling",
 
-  {
-    title: "Core Java + JDBC + Advanced Java",
-    desc: "Servlets, JSP, and backend integration.",
-    img: java,
-    topics: [
-      "Servlet lifecycle (init, service, destroy)",
-      "JSP (Java Server Pages)",
-      "JSP directives, scripting elements",
-      "Session Management (Cookies, HttpSession, URL rewriting)",
-      "Filters & Listeners",
-      "MVC architecture",
-      "Form handling & validation",
-      "Web application structure (WAR)",
-      "Deployment on server (Apache Tomcat)",
-      "Servlet API & HTTP methods (GET, POST)",
-      "JSTL (JSP Standard Tag Library)",
-      "Error Handling in Web Apps",
-    ],
-  },
+    // Core Concepts
+    "Power Query (Data Cleaning & Transformation)",
+    "DAX (Data Analysis Expressions)",
+    "Dataset Connections & Relationships",
 
-  {
-    title: "Spring Boot + Hibernate",
-    desc: "Modern backend development using Java frameworks.",
-    img: java,
-    topics: [
-      "Spring Boot fundamentals",
-      "Project setup using Spring Initializr",
-      "Hibernate ORM (Object Relational Mapping)",
-      "Annotations-based configuration",
-      "REST API development",
-      "Dependency Injection (IoC)",
-      "Spring Data JPA",
-      "Entity mapping with database",
-      "CRUD APIs (Controller, Service, Repository)",
-      "Application.properties & YAML config",
-      "Validation (Hibernate Validator)",
-      "Exception Handling (Global Exception)",
-      "Pagination & Sorting",
-      "JWT Authentication & Security basics",
-      "Spring Security (authentication & authorization)",
-      "Microservices basics",
-    ],
-  },
+    // Visualization & Dashboard
+    "Dashboard Creation & BI Reports",
+    "Charts (Bar, Pie, Donut, Tree Map, Waterfall)",
+    "Filters & Slicers",
+    "Maps & Scatter Plots",
+
+    // Advanced Usage
+    "Customer Segmentation",
+    "Interactive Dashboard Analysis",
+    "Report Optimization & Insights",
+
+    // Assignments & Projects
+    "Create Multiple Visual Dashboards",
+    "Table Calculations & KPIs",
+    "10+ Real-world Projects"
+  ],
+},
+
+ {
+  title: "Statistics + Machine Learning",
+  desc: "Comprehensive program covering Statistics, Data Analysis, and Machine Learning for real-world data-driven decision making.",
+  img: java,
+  topics: [
+    // Statistics Fundamentals
+    "Probability (PDF, CDF), Conditional Probability, Bayes’ Theorem",
+    "Random Experiments & Event Types (Independent, Dependent, Mutually Exclusive)",
+    "Introduction to Statistics & Statistical Thinking",
+    "Variables: Quantitative, Categorical, Discrete, Continuous",
+    "Five Point Summary & Box Plot",
+
+    // Sampling Techniques
+    "Population vs Sample",
+    "Sampling Methods: Random, Systematic, Stratified, Cluster",
+    "Advanced Sampling: Convenience, Quota, Snowball, Judgement",
+
+    // Descriptive Statistics
+    "Mean, Median, Mode",
+    "Variance, Standard Deviation, Range, IQR",
+    "Skewness & Kurtosis",
+
+    // Inferential Statistics
+    "Z-Distribution & T-Distribution",
+    "Hypothesis Testing (Null/Alternative, P-Value, Z-Test)",
+    "Type I & Type II Errors",
+    "Chi-Square Test & Correlation",
+
+    // Advanced Statistics
+    "ANOVA, ANCOVA, Regression Analysis",
+    "Binomial & Normal Distribution",
+
+    // Data Analysis & EDA (Important)
+    "Data Wrangling & Data Cleaning",
+    "Handling Missing Values & Outliers (Z-score)",
+    "Data Integration & Transformation",
+    "Bivariate & Multivariate Analysis",
+    "Visualization (Scatter Plot, Heatmap)",
+
+    // Machine Learning Basics
+    "ML Introduction (Supervised, Unsupervised, Reinforcement)",
+    "Train-Test Split, Model Building Steps",
+    "Feature Scaling & Encoding Techniques",
+
+    // ML Algorithms
+    "Logistic Regression (Sigmoid Function)",
+    "KNN (Euclidean & Manhattan Distance)",
+    "Decision Tree (Gini, Entropy, Chi-Square)",
+    "Random Forest (Bagging, Boosting, OOB Score)",
+    "Naive Bayes (Gaussian, Multinomial, Bernoulli)",
+
+    // Clustering & SVM
+    "K-Means & Hierarchical Clustering (Dendrogram)",
+    "SVM (Hyperplane, Kernel, Gamma)",
+
+    // Model Evaluation & Tuning
+    "Confusion Matrix, Accuracy, Precision, Recall, F1",
+    "ROC Curve & AUC",
+    "K-Fold Cross Validation & GridSearchCV",
+
+    // Dimensionality Reduction
+    "PCA (Eigenvalues, Eigenvectors, Scree Plot)",
+    "Curse of Dimensionality & Use Cases"
+  ],
+},
 ];
 
 const coursePlans = {
