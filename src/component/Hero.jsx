@@ -33,7 +33,7 @@ const Hero = () => {
 
       {/* Subtitle */}
       <p className="mt-6 text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed">
-       Start small, achieve big — complete your journey to becoming a Java Full Stack Developer with our short courses.
+       Start small, achieve big — complete your journey to becoming a Data Science & Data Analysis with our short courses.
       </p>
 
      {/* Stats Section */}

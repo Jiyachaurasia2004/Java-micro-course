@@ -9,7 +9,7 @@ import qr from "../assets/qr-beangate.png";
 import { FaShieldAlt } from "react-icons/fa";
 const courses = [
  {
-  title: "Core Python (Programming + Data Analysis Basics)",
+  title: "Core Python",
   desc: "Learn Python fundamentals for programming, data analysis, and building a strong foundation for Data Science and Machine Learning.",
   img: java,
   topics: [
@@ -46,7 +46,7 @@ const courses = [
 },
 
  {
-  title: "Advance Python + MySQL (Data Analysis & Database Integration)",
+  title: "Advance Python + MySQL",
   desc: "Learn advanced Python with MySQL integration, data analysis using Pandas & NumPy, and data visualization for real-world Data Science applications.",
   img: java,
   topics: [
@@ -84,7 +84,7 @@ const courses = [
 },
 
   {
-  title: "Power BI (Data Visualization & Business Intelligence)",
+  title: "Power BI",
   desc: "Learn Power BI for data analysis, dashboard creation, and business intelligence to turn raw data into meaningful insights.",
   img: java,
   topics: [
@@ -184,7 +184,7 @@ const courses = [
 ];
 
 const coursePlans = {
-  "Core Java": [
+  "Core Python": [
     {
       title: "Registration Only",
       price: "₹2,000",
@@ -217,7 +217,7 @@ const coursePlans = {
     },
   ],
 
-  "Core Java + JDBC + MySQL": [
+  "Advance Python + MySQL": [
     {
       title: "Registration Only",
       price: "₹2,000",
@@ -250,7 +250,7 @@ const coursePlans = {
     },
   ],
 
-  "Core Java + JDBC + Advanced Java": [
+  "Power BI": [
     {
       title: "Registration Only",
       price: "₹2,000",
@@ -331,47 +331,59 @@ function Course() {
       id="course"
     >
       {/* Badge */}
-      <div className="mb-6">
-        {" "}
-        <span className="px-6 py-2 rounded-full text-white text-sm font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 shadow-md">
-          {" "}
-          {"</>"} JAVA MICRO COURSES {"</>"}{" "}
-        </span>{" "}
-      </div>
+    <div className="mb-4 sm:mb-6 flex justify-center">
+  <span className="
+    px-3 py-1 text-xs 
+    sm:px-4 sm:py-2 sm:text-sm 
+    md:px-6 md:py-2 md:text-base 
+    lg:text-lg
+    rounded-full text-white font-semibold 
+    bg-gradient-to-r from-blue-600 to-cyan-500 
+    shadow-md text-center
+  ">
+    {"</>"} DATA SCIENCE & DATA ANALYSIS MICRO COURSES {"</>"}
+  </span>
+</div>
 
       {/* Heading */}
       <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900">
         <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
           Master
         </span>{" "}
-        Java Development
+        Data Science & Data Analysis
       </h1>
 
       {/* Subtitle */}
       <p className="mt-6 text-gray-600 text-lg max-w-3xl mx-auto">
-        Learn Java from basics to advanced with real-world projects and
+        Learn Data Science & Data Analysis from basics to advanced with real-world projects and
         industry-level backend skills
       </p>
 
       {/* Button */}
-      <div className="mt-10 flex justify-center">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setActive("java")}
-          className={`
-     flex items-center gap-2 px-8 py-3 rounded-full font-medium shadow-lg transition
-      ${
-        active === "java"
-          ? "text-white bg-gradient-to-r from-blue-600 to-cyan-500"
-          : "bg-white text-gray-600 border"
-      }
+   <div className="mt-6 sm:mt-10 flex justify-center px-2">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() => setActive("java")}
+    className={`
+      flex items-center justify-center gap-2 
+      w-full sm:w-auto
+      px-4 py-2 text-xs
+      sm:px-6 sm:py-2 sm:text-sm
+      md:px-8 md:py-3 md:text-base
+      lg:text-lg
+      rounded-full font-medium shadow-lg transition text-center
+      ${active === "java"
+        ? "text-white bg-gradient-to-r from-blue-600 to-cyan-500"
+        : "bg-white text-gray-600 border"}
     `}
-        >
-          <FaJava className="text-sm sm:text-base md:text-lg" />
-          <span className="leading-tight">Java Courses</span>
-        </motion.button>
-      </div>
+  >
+    <FaJava className="text-sm sm:text-base md:text-lg" />
+    <span className="leading-tight">
+      Data Science & Data Analysis Courses
+    </span>
+  </motion.button>
+</div>
 
       {/* Cards */}
       <motion.div
