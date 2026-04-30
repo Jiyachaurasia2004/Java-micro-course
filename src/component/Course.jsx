@@ -197,7 +197,7 @@ const coursePlans = {
     },
   ],
 
-  "Statistics + Machine Learning": [
+  "Spring Boot + Hibernate": [
     {
       title: "Registration Only",
       price: "₹2,000",
