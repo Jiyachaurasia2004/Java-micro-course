@@ -245,50 +245,36 @@ function Course() {
       id="course"
     >
       {/* Badge */}
-      <div className="mb-4 sm:mb-6 flex justify-center">
-        <span
-          className="
-    px-3 py-1 text-xs 
-    sm:px-4 sm:py-2 sm:text-sm 
-    md:px-6 md:py-2 md:text-base 
-    lg:text-lg
-    rounded-full text-white font-semibold 
-    bg-gradient-to-r from-blue-600 to-cyan-500 
-    shadow-md text-center
-  "
-        >
-          {"</>"} JAVA MICRO COURSES {"</>"}
-        </span>
+      <div className="mb-6">
+        {" "}
+        <span className="px-6 py-2 rounded-full text-white text-sm font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 shadow-md">
+          {" "}
+          {"</>"} JAVA MICRO COURSES {"</>"}{" "}
+        </span>{" "}
       </div>
 
       {/* Heading */}
       <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900">
         <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
-          Master 
+          Master
         </span>{" "}
         Java Development
       </h1>
 
       {/* Subtitle */}
       <p className="mt-6 text-gray-600 text-lg max-w-3xl mx-auto">
-        Learn Java from basics to advanced with
-        real-world projects and industry-level backend skills
+        Learn Java from basics to advanced with real-world projects and
+        industry-level backend skills
       </p>
 
       {/* Button */}
-      <div className="mt-6 sm:mt-10 flex justify-center px-2">
+      <div className="mt-10 flex justify-center">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setActive("java")}
           className={`
-      flex items-center justify-center gap-2 
-      w-full sm:w-auto
-      px-4 py-2 text-xs
-      sm:px-6 sm:py-2 sm:text-sm
-      md:px-8 md:py-3 md:text-base
-      lg:text-lg
-      rounded-full font-medium shadow-lg transition text-center
+     flex items-center gap-2 px-8 py-3 rounded-full font-medium shadow-lg transition
       ${
         active === "java"
           ? "text-white bg-gradient-to-r from-blue-600 to-cyan-500"
@@ -297,9 +283,7 @@ function Course() {
     `}
         >
           <FaJava className="text-sm sm:text-base md:text-lg" />
-          <span className="leading-tight">
-            Java Courses
-          </span>
+          <span className="leading-tight">Java Courses</span>
         </motion.button>
       </div>
 
