@@ -25,7 +25,7 @@ function Module() {
       color: "border-purple-300 bg-purple-50 text-purple-600",
     },
     {
-      title: "2 Real Projects",
+      title: "5 Real Projects",
       desc: "Hands-on projects for your portfolio",
       icon: <FaProjectDiagram />,
       color: "border-orange-300 bg-orange-50 text-orange-600",

@@ -136,7 +136,7 @@ function Projects() {
 
           <div className="flex gap-4 mt-5 md:mt-0">
             <button className="px-6 py-2 rounded-full bg-white/20 backdrop-blur border border-white/30 hover:scale-105 transition">
-              2 Major Projects
+              5 Major Projects
             </button>
             <button className="px-6 py-2 rounded-full bg-white/20 backdrop-blur border border-white/30 hover:scale-105 transition">
               Portfolio Ready

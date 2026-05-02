@@ -1,5 +1,5 @@
 import React from "react";
-import { FaJava } from "react-icons/fa";
+
 // ✅ Updated tech stack with image paths
 
 const Hero = () => {
@@ -92,8 +92,8 @@ const Hero = () => {
     
 
       {/* Floating Elements */}
-      <div className="absolute left-10 top-1/3 text-blue-700 text-6xl animate-bounce">
-         <FaJava />
+      <div className="absolute left-10 top-1/3 text-blue-700 opacity-30 text-6xl animate-bounce">
+        🐍
       </div>
       <div className="absolute right-10 top-1/4 text-indigo-400 opacity-30 text-5xl animate-pulse">
         ⚙️

@@ -46,18 +46,10 @@ const courses = [
 },
 
  {
-  title: "Advance Python + MySQL",
-  desc: "Learn advanced Python with MySQL integration, data analysis using Pandas & NumPy, and data visualization for real-world Data Science applications.",
+   title: "Advance Python",
+  desc: "Master advanced Python concepts including data handling, automation, and libraries used in data analysis and real-world applications.",
   img: java,
   topics: [
-    // Python + MySQL
-    "Python-MySQL Connection (mysql-connector)",
-    "Database CRUD Operations (Create, Read, Update, Delete)",
-    "Executing Queries & Fetching Data",
-    "Joins (Inner, Left, Right)",
-    "Transactions (commit, rollback)",
-    "Indexes & Query Optimization Basics",
-
     // NumPy
     "NumPy Introduction & Array Creation",
     "Indexing, Slicing & Iteration",
@@ -82,7 +74,22 @@ const courses = [
     "Assessment Test (Coding + MCQ)"
   ],
 },
+ {
+   title: "MySQL",
+  desc: "Learn database management, SQL queries, data modeling, and efficient data storage techniques for real-world applications.",
+  img: java,
+  topics: [
+    // Python + MySQL
+    "Python-MySQL Connection (mysql-connector)",
+    "Database CRUD Operations (Create, Read, Update, Delete)",
+    "Executing Queries & Fetching Data",
+    "Joins (Inner, Left, Right)",
+    "Transactions (commit, rollback)",
+    "Indexes & Query Optimization Basics",
 
+   
+  ],
+},
   {
   title: "Power BI",
   desc: "Learn Power BI for data analysis, dashboard creation, and business intelligence to turn raw data into meaningful insights.",
@@ -117,8 +124,8 @@ const courses = [
 },
 
  {
-  title: "Statistics + Machine Learning",
-  desc: "Comprehensive program covering Statistics, Data Analysis, and Machine Learning for real-world data-driven decision making.",
+  title: "Statistics",
+  desc: "Understand statistical concepts, probability, and data analysis techniques for making data-driven decisions.",
   img: java,
   topics: [
     // Statistics Fundamentals
@@ -154,6 +161,16 @@ const courses = [
     "Data Integration & Transformation",
     "Bivariate & Multivariate Analysis",
     "Visualization (Scatter Plot, Heatmap)",
+
+   
+  ],
+},
+ {
+  title: "Machine Learning",
+  desc: "Learn machine learning algorithms, model building, and prediction techniques for solving real-world problems.",
+  img: java,
+  topics: [
+   
 
     // Machine Learning Basics
     "ML Introduction (Supervised, Unsupervised, Reinforcement)",
@@ -217,7 +234,39 @@ const coursePlans = {
     },
   ],
 
-  "Advance Python + MySQL": [
+  "Advance Python": [
+    {
+      title: "Registration Only",
+      price: "₹2,000",
+      total: "₹2,360",
+      icon: <FaShieldAlt />,
+      btn: "Register Now",
+      color: "from-pink-500 to-purple-500",
+      features: [
+        "Course Registration",
+        "Learning Material Access",
+        "Community Access",
+        "Basic Resources",
+        "30 Days Access",
+      ],
+    },
+    {
+      title: "One-Time Payment",
+      price: "₹15,000",
+      total: "₹17,700",
+      icon: <FaMoneyBill />,
+      highlight: true,
+      btn: "Buy Now",
+      features: [
+        "Complete Course Access",
+        "All Projects & Assignments",
+        "Live Sessions",
+        "Certificate",
+        "Lifetime Updates",
+      ],
+    },
+  ],
+  "MySQL": [
     {
       title: "Registration Only",
       price: "₹2,000",
@@ -283,7 +332,39 @@ const coursePlans = {
     },
   ],
 
-  "Statistics + Machine Learning": [
+  "Statistics": [
+    {
+      title: "Registration Only",
+      price: "₹2,000",
+      total: "₹2,360",
+      icon: <FaShieldAlt />,
+      btn: "Register Now",
+      color: "from-pink-500 to-purple-500",
+      features: [
+        "Course Registration",
+        "Learning Material Access",
+        "Community Access",
+        "Basic Resources",
+        "30 Days Access",
+      ],
+    },
+    {
+      title: "One-Time Payment",
+      price: "₹15,000",
+      total: "₹17,700",
+      icon: <FaMoneyBill />,
+      highlight: true,
+      btn: "Buy Now",
+      features: [
+        "Complete Course Access",
+        "All Projects & Assignments",
+        "Live Sessions",
+        "Certificate",
+        "Lifetime Updates",
+      ],
+    },
+  ],
+    "Machine Learning": [
     {
       title: "Registration Only",
       price: "₹2,000",
